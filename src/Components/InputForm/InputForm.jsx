@@ -85,7 +85,7 @@ export default function InputForm (){
                     
                 </label>
                 <div className="btn postbtn1">
-              <input className="postBtn" type="submit" value="Post" />
+              <input className="postBtn" type="submit" value="Sav File" />
               </div>
             </form>
         </div>
