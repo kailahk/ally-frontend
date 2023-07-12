@@ -21,6 +21,7 @@ export default function LoginForm({ setUser }) {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(credentials),
             });
+            console.log()
             const tokenObj = await res.json();
             const token = tokenObj['token'];
             localStorage.setItem('token', token);
@@ -28,6 +29,7 @@ export default function LoginForm({ setUser }) {
                 method: 'GET',
                 headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
             })
+            console.log(userRes)
             const user = await userRes.json();
             console.log(user)
             setUser(user)
