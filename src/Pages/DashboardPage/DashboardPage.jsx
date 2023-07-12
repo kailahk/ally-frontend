@@ -11,6 +11,7 @@ export default function DashboardPage({ files }) {
     return (
         <>
             <h1>Dashboard Page</h1>
+            {filesList}
             <Link to='/newfile'>
                 <button>New File</button>
             </Link>
