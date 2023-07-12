@@ -15,7 +15,7 @@ export default function InputForm (){
         userNotes: ""
     });
 
-    const BASE_URL = "http:localhost:8000";
+    const BASE_URL = "http://localhost:8000";
 
     const handleChange = (e) => {
         const userInput = {...postForm};
@@ -34,7 +34,7 @@ export default function InputForm (){
             },
             body: JSON.stringify(currentState),
            };
-           const response = await fetch(BASE_URL + "/posts", requestOptions);
+           const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
            const newPost = await response.json();
            setPostform([...posts, newPost]);
            setPostform({
@@ -43,7 +43,7 @@ export default function InputForm (){
             circumstances: "",
             age: "",
             dates: "",
-            userNotes: ""
+            notes: ""
            })
            navigate("/")
         } catch (err) {
@@ -56,32 +56,32 @@ export default function InputForm (){
             <form onSubmit={handleSubmit}>
                 <label>
                     <p>Title</p>
-                    <textarea type="text" onChange={ handleChange} />
+                    <textarea type="text" name="title" value={postForm.title} onChange={handleChange} />
 
                 </label>
                 <label>
                     <p>relationship</p>
-                    <textarea type="text" onChange={ handleChange} />
+                    <textarea type="text" name="relationship" value={postForm.relationship} onChange={handleChange} />
                     
                 </label>
                 <label>
                     <p>circumstance</p>
-                    <textarea type="text" onChange={ handleChange} />
+                    <textarea type="text" name="circumstances" value={postForm.circumstances} onChange={handleChange} />
                  
                 </label>
                 <label>
                     <p>age</p>
-                    <input type="number" onChange={ handleChange} />
+                    <input type="number" name="age" value={postForm.age} onChange={handleChange} />
                     
                 </label>
                 <label>
                     <p>dates</p>
-                    <textarea type="text" onChange={ handleChange} />
+                    <textarea type="text" name="dates" value= {postForm.dates} onChange={handleChange} />
                     
                 </label>
                 <label>
                     <p>notes</p>
-                    <textarea type="text" onChange={ handleChange} />
+                    <textarea type="text" name="notes" value = {postForm.notes} onChange={handleChange} />
                     
                 </label>
                 <div className="btn postbtn1">
