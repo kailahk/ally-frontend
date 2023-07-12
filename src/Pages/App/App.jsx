@@ -1,20 +1,25 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
-import InputForm from '../../Components/InputForm/InputForm';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../Components/NavBar/NavBar';
+import AboutPage from '../AboutPage/AboutPage';
+import DashboardPage from '../DashboardPage/DashboardPage';
+import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
+import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   return (
     <main className="App">
       {user ?
         <div>
           <NavBar user={user} setUser={setUser} />
-          <h1>Logged In</h1>
           <Routes>
-            <Route exact path="/userinfo" element={<InputForm />} />
+            <Route exact path="/newfile" element={<NewFilePage />} />
+            <Route exact path="/about" element={<AboutPage />} />
+            <Route exact path="/dashboard" element={<DashboardPage />} />
+            <Route exact path="/filedetails" element={<FileDetailsPage />} />
           </Routes>
         </div>
         :
