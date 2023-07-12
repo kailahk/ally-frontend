@@ -19,7 +19,7 @@ export default function InputForm() {
         notes: ""
     });
 
-    const BASE_URL = "http:localhost:8000";
+    const BASE_URL = "http://localhost:8000";
 
     const handleChange = (e) => {
         const userInput = { ...postForm };
@@ -39,7 +39,7 @@ export default function InputForm() {
                 },
                 body: JSON.stringify(currentState),
             };
-            const response = await fetch(BASE_URL + "/posts", requestOptions);
+            const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
             const newPost = await response.json();
             setPostform([...posts, newPost]);
             setPostform({
@@ -48,7 +48,7 @@ export default function InputForm() {
                 circumstances: "",
                 age: "",
                 date: dateValue,
-                userNotes: ""
+                notes: ""
             })
             navigate("/")
         } catch (err) {
