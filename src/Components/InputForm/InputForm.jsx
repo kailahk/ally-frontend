@@ -34,7 +34,7 @@ export default function InputForm (){
             },
             body: JSON.stringify(currentState),
            };
-           const response = await fetch(BASE_URL + "/posts", requestOptions);
+           const response = await fetch(BASE_URL + "/info/updateUser", requestOptions);
            const newPost = await response.json();
            setPostform([...posts, newPost]);
            setPostform({
