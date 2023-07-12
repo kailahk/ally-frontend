@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import './InputForm.css';
 import PropTypes from 'prop-types'
 
 export default function InputForm (){
