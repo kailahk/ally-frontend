@@ -16,9 +16,23 @@ export default function LoginForm({ setUser }) {
     async function handleSubmit(evt) {
         evt.preventDefault();
         try {
-            // comment in the below once we can import the login function 
-            // const user = await ... (credentials);
-            // setUser(user);
+            const res = await fetch('http://localhost:8000/users/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(credentials),
+            });
+            console.log()
+            const tokenObj = await res.json();
+            const token = tokenObj['token'];
+            localStorage.setItem('token', token);
+            const userRes = await fetch('http://localhost:8000/users/me', {
+                method: 'GET',
+                headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`}
+            })
+            console.log(userRes)
+            const user = await userRes.json();
+            console.log(user)
+            setUser(user)
         } catch {
             setError('Log In Failed - Try Again');
         }
