@@ -9,18 +9,18 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   const [files, setFiles] = useState([]);
 
-  useEffect(() => {
-    async function getFiles() {
-      // const allListItems = await 
-      setFiles(files);
-    };
-    if (user) getFiles();
-    // console.log(files)
-  }, [user]
-  )
+  // useEffect(() => {
+  //   async function getFiles() {
+  //     const allListItems = await 
+  //     setFiles(files);
+  //   };
+  //   if (user) getFiles();
+  //   console.log(files)
+  // }, [user]
+  // )
 
   return (
     <main className="App">
