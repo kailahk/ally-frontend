@@ -9,7 +9,7 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   return (
     <main className="App">
       {user ?
