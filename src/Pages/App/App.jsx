@@ -31,7 +31,8 @@ export default function App() {
             <Route exact path="/newfile" element={<NewFilePage user={user}/>} />
             <Route exact path="/about" element={<AboutPage />} />
             <Route exact path="/dashboard" element={<DashboardPage files={files} user={user} />} />
-            <Route exact path="/filedetails" element={<FileDetailsPage />} />
+            <Route exact path="/filedetails/:id" element={<FileDetailsPage user={user}/>} />
+            
           </Routes>
         </div>
         :
