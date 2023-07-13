@@ -9,7 +9,7 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
   const [files, setFiles] = useState([]);
 
   // useEffect(() => {
