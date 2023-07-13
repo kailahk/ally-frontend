@@ -9,34 +9,57 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(true);
-  const [files, setFiles] = useState([]);
+	const [user, setUser] = useState(null);
+	const [files, setFiles] = useState([]);
 
-  // useEffect(() => {
-  //   async function getFiles() {
-  //     const allListItems = await 
-  //     setFiles(files);
-  //   };
-  //   if (user) getFiles();
-  //   console.log(files)
-  // }, [user]
-  // )
+	// useEffect(() => {
+	//   async function getFiles() {
+	//     const allListItems = await
+	//     setFiles(files);
+	//   };
+	//   if (user) getFiles();
+	//   console.log(files)
+	// }, [user]
+	// )
 
-  return (
-    <main className="App">
-      {user ?
-        <div>
-          <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route exact path="/newfile" element={<NewFilePage />} />
-            <Route exact path="/about" element={<AboutPage />} />
-            <Route exact path="/dashboard" element={<DashboardPage files={files} />} />
-            <Route exact path="/filedetails" element={<FileDetailsPage />} />
-          </Routes>
-        </div>
-        :
-        <AuthPage setUser={setUser} />
-      }
-    </main>
-  );
+	function handleLogout() {
+		setUser(null);
+		setFiles([]);
+
+		localStorage.removeItem('token');
+		alert('You have been logged out!');
+		navigate('/');
+	}
+
+	// async function getUser(token) {
+	// 	try {
+	// 		const res = await fetch('http://localhost:8000/users/me', {
+
+	//     });
+	// 	} catch (err) {}
+	// }
+
+	// useEffect(() => {
+	// 	if (localStorage.getItem('token')) {
+	// 		setUser(null);
+	// 	}
+	// }, []);
+
+	return (
+		<main className='App'>
+			{user ? (
+				<div>
+					<NavBar user={user} setUser={setUser} handleLogout={handleLogout} />
+					<Routes>
+						<Route exact path='/newfile' element={<NewFilePage />} />
+						<Route exact path='/about' element={<AboutPage />} />
+						<Route exact path='/dashboard' element={<DashboardPage files={files} />} />
+						<Route exact path='/filedetails' element={<FileDetailsPage />} />
+					</Routes>
+				</div>
+			) : (
+				<AuthPage setUser={setUser} />
+			)}
+		</main>
+	);
 }
