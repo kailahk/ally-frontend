@@ -31,7 +31,6 @@ export default function InputForm({user}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const currentState = { ...postForm }
-        console.log(currentState)
         try {
            const requestOptions = {
             method: "POST",
@@ -51,7 +50,7 @@ export default function InputForm({user}) {
             dates: "",
             userNotes: ""
            })
-           navigate("/")
+           navigate("/dashboard")
         } catch (err) {
             console.log(err);
         }

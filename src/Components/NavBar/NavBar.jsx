@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export default function NavBar({ user, handleLogout }) {
 	return (
 		<nav>
-			<Link to='/'>Dashboard</Link>
-			<Link to='/about'>About</Link>
+			<Link to='/dashboard'>Dashboard</Link>
+			<Link to='/'>About</Link>
 			<Link to='' onClick={handleLogout}>
 				Log Out
 			</Link>
