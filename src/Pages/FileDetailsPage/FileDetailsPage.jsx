@@ -14,21 +14,17 @@ export default function FileDetailsPage({ user }) {
         ]
 
     async function handleClick() {
-        const res = await fetch(BASE_URL + '/chat', {
+        try {
+          const res = await fetch(BASE_URL + '/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messages: prompt }),
-        })
-            .then((response) => {
-                console.log(response)
-                response.json()
-            })
-            .then((data) => {
-                setChatRes(data)
-            })
-            .catch((err) => {
-                setError('Error Generating Resources - Try again.')
-            });
+          });
+          const result = await res.json();
+          setChatRes(result.content);
+        } catch (error) {
+          setError('Error Generating Resources - Try again.');
+        }
     }
     const getFile = async () => {
         try {
