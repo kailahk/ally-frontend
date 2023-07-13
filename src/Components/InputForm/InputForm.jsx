@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default function InputForm() {
+export default function InputForm({user}) {
     const [posts, setPosts] = useState([])
     const navigate = useNavigate();
     const [dateValue, setDateValue] = useState(new Date());
@@ -16,7 +16,8 @@ export default function InputForm() {
         circumstances: "",
         age: "",
         date: dateValue,
-        notes: ""
+        notes: "",
+        userid: user._id
     });
 
     const BASE_URL = "http://localhost:8000";
@@ -32,25 +33,25 @@ export default function InputForm() {
         const currentState = { ...postForm }
         console.log(currentState)
         try {
-            const requestOptions = {
-                method: "POST",
-                headers: {
-                    "content-Type": "application/json",
-                },
-                body: JSON.stringify(currentState),
-            };
-            const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
-            const newPost = await response.json();
-            setPostform([...posts, newPost]);
-            setPostform({
-                title: "",
-                relationship: "",
-                circumstances: "",
-                age: "",
-                date: dateValue,
-                notes: ""
-            })
-            navigate("/")
+           const requestOptions = {
+            method: "POST",
+            headers: {
+                "content-Type": "application/json",
+            },
+            body: JSON.stringify(currentState),
+           };
+           const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
+           const newPost = await response.json();
+           setPostform([...posts, newPost]);
+           setPostform({
+            title: "",
+            relationship:"",
+            circumstances: "",
+            age: "",
+            dates: "",
+            userNotes: ""
+           })
+           navigate("/")
         } catch (err) {
             console.log(err);
         }
