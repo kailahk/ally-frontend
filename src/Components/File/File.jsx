@@ -1,5 +1,8 @@
-import './File.css'
+// import './File.css'
+// import { useState, useEffect } from "react";
 
-export default function File({file}) {
-    console.log(file)
-}
+// export default function File() {
+//     const PostList = () => {
+//         const [posts, setPosts] = useState([]);
+//     console.log(file)
+// }

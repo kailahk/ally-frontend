@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default function InputForm() {
+export default function InputForm({user}) {
     const [posts, setPosts] = useState([])
     const navigate = useNavigate();
     const [dateValue, setDateValue] = useState(new Date());
@@ -16,7 +16,8 @@ export default function InputForm() {
         circumstances: "",
         age: "",
         date: dateValue,
-        notes: ""
+        notes: "",
+        userid: user._id
     });
 
     const BASE_URL = "http://localhost:8000";
@@ -39,7 +40,7 @@ export default function InputForm() {
             },
             body: JSON.stringify(currentState),
            };
-           const response = await fetch(BASE_URL + "/info/updateUser", requestOptions);
+           const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
            const newPost = await response.json();
            setPostform([...posts, newPost]);
            setPostform({

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import File from '../../Components/File/File';
 
 
-export default function DashboardPage({ files }) {
+export default function DashboardPage({ files, user}) {
     const filesList = files.map((file, idx) => <File
         key={idx}
         file={file}

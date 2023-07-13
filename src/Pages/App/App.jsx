@@ -28,9 +28,9 @@ export default function App() {
         <div>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route exact path="/newfile" element={<NewFilePage />} />
+            <Route exact path="/newfile" element={<NewFilePage user={user}/>} />
             <Route exact path="/about" element={<AboutPage />} />
-            <Route exact path="/dashboard" element={<DashboardPage files={files} />} />
+            <Route exact path="/dashboard" element={<DashboardPage files={files} user={user} />} />
             <Route exact path="/filedetails" element={<FileDetailsPage />} />
           </Routes>
         </div>
