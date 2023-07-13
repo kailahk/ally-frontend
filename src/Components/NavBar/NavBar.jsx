@@ -8,7 +8,7 @@ export default function NavBar({ user, setUser}) {
             <Link to='/dashboard'>Dashboard</Link>
             <Link to='/about'>About</Link>
             <Link to=''>Log Out</Link>
-            <p className='welcome-user'>Welcome, {(user.name).charAt(0).toUpperCase() + (user.name).slice(1)}!</p>
+            {/* <p className='welcome-user'>Welcome, {(user.name).charAt(0).toUpperCase() + (user.name).slice(1)}!</p> */}
         </nav>
     )
 }

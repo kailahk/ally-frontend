@@ -9,7 +9,7 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   const [files, setFiles] = useState([]);
 
   // useEffect(() => {
@@ -30,7 +30,7 @@ export default function App() {
           <Routes>
             <Route exact path="/newfile" element={<NewFilePage />} />
             <Route exact path="/about" element={<AboutPage />} />
-            <Route exact path="/dashboard" element={<DashboardPage files={files} />} />
+            <Route exact path="/" element={<DashboardPage files={files} />} />
             <Route exact path="/filedetails" element={<FileDetailsPage />} />
           </Routes>
         </div>
