@@ -5,99 +5,68 @@ import './InputForm.css';
 import PropTypes from 'prop-types'
 import "react-datepicker/dist/react-datepicker.css";
 
-
-export default function InputForm({ user }) {
-    const [posts, setPosts] = useState([])
-    const navigate = useNavigate();
-    const [dateValue, setDateValue] = useState(new Date());
-    const [birthday, setBirthday] = useState(new Date());
-    const [postForm, setPostform] = useState({
-        title: "",
-        relationship: "",
-        circumstances: "",
-        birthday: new Date(),
-        date: new Date(),
-        notes: "",
-        userid: user._id
-    });
-
-    const BASE_URL = "http://localhost:8000";
-
-    const handleChange = (e) => {
-        const userInput = { ...postForm };
-        userInput[e.target.name] = e.target.value;
-        setPostform(userInput);
-    }
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const currentState = { ...postForm, birthday, 'date': dateValue }
-        try {
-            const requestOptions = {
-                method: "POST",
-                headers: {
-                    "content-Type": "application/json",
-                },
-                body: JSON.stringify(currentState),
-            };
-            const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
-            const newPost = await response.json();
-            setPostform([...posts, newPost]);
-            setPostform({
-                title: "",
-                relationship: "",
-                circumstances: "",
-                birthday: '',
-                date: '',
-                notes: ""
-            })
-            navigate("/dashboard")
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    return (
-        <div className="post-wrapper input-form">
-            <form onSubmit={handleSubmit} className="new-file-form">
-                <label>
-                    <h4>Title</h4>
-                    <p>name or description</p>
-                    <textarea name="title" value={postForm.title} type="text" onChange={handleChange} />
-
-                </label>
-                <label>
-                    <h4>Relationship</h4>
-                    <p>who they are to you</p>
-                    <textarea name="relationship" value={postForm.relationship} type="text" onChange={handleChange} />
-                </label>
-                <label>
-                    <h4>Circumstances</h4>
-                    <p>major life events</p>
-                    <textarea name="circumstances" value={postForm.circumstances} type="text" onChange={handleChange} />
-
-                </label>
+export default function InputForm({
+	fileData,
+	handleSubmit,
+	handleChange,
+	dateValue,
+	setDateValue,
+    birthday,
+    setBirthday
+}) {
+	return (
+		<div className='post-wrapper input-form'>
+			<form onSubmit={handleSubmit} className='new-file-form'>
+				<label>
+					<h4>Title</h4>
+					<p>name or description</p>
+					<textarea name='title' value={fileData.title} type='text' onChange={handleChange} />
+				</label>
+				<label>
+					<h4>Relationship</h4>
+					<p>who they are to you</p>
+					<textarea
+						name='relationship'
+						value={fileData.relationship}
+						type='text'
+						onChange={handleChange}
+					/>
+				</label>
+				<label>
+					<h4>Circumstances</h4>
+					<p>major life events</p>
+					<textarea
+						name='circumstances'
+						value={fileData.circumstances}
+						type='text'
+						onChange={handleChange}
+					/>
+				</label>
                 <div className="calendar-container">
                     <label>
                         <h4>Birthday</h4>
                     </label>
                     <DatePicker onChange={(birthday) => setBirthday(birthday)} selected={birthday} className="date-picker" />
                 </div>
-                <div className="calendar-container">
-                    <label>
-                        <h4>Date</h4>
-                    </label>
-                    <p>last time you interacted</p>
-                    <DatePicker onChange={(date) => setDateValue(date)} selected={dateValue} className="date-picker" />
-                </div>
-                <label>
-                    <h4>Notes</h4>
-                    <textarea name="notes" value={postForm.notes} type="text" onChange={handleChange} />
-
-                </label>
-                <div className="btn postbtn1">
-                    <input className="postBtn" type="submit" value="Save File" />
-                </div>
-            </form>
-        </div>
-    )
+				<div className='calendar-container'>
+					<label>
+						<h4>Date</h4>
+					</label>
+					<p>last time you interacted</p>
+					<DatePicker
+						onChange={(date) => setDateValue(date)}
+						selected={dateValue}
+						className='date-picker'
+					/>
+				</div>
+				<label>
+					<h4>Notes</h4>
+					<textarea name='notes' value={fileData.notes} type='text' onChange={handleChange} />
+				</label>
+				<div className='btn postbtn1'>
+					<input className='postBtn' type='submit' value='Save File' />
+				</div>
+			</form>
+		</div>
+	);
 }
