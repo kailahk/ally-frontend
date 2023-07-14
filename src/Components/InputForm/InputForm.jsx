@@ -15,9 +15,9 @@ export default function InputForm({ user }) {
         title: "",
         relationship: "",
         circumstances: "",
-        birthday: "",
-        date: dateValue,
-        notes: birthday,
+        birthday: new Date(),
+        date: new Date(),
+        notes: "",
         userid: user._id
     });
 
@@ -28,10 +28,9 @@ export default function InputForm({ user }) {
         userInput[e.target.name] = e.target.value;
         setPostform(userInput);
     }
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const currentState = { ...postForm }
+        const currentState = { ...postForm, birthday, 'date': dateValue }
         try {
             const requestOptions = {
                 method: "POST",
@@ -47,8 +46,8 @@ export default function InputForm({ user }) {
                 title: "",
                 relationship: "",
                 circumstances: "",
-                birthday: "",
-                date: "",
+                birthday: '',
+                date: '',
                 notes: ""
             })
             navigate("/dashboard")
@@ -56,6 +55,7 @@ export default function InputForm({ user }) {
             console.log(err);
         }
     }
+
     return (
         <div className="post-wrapper input-form">
             <form onSubmit={handleSubmit} className="new-file-form">
@@ -80,7 +80,7 @@ export default function InputForm({ user }) {
                     <label>
                         <h4>Birthday</h4>
                     </label>
-                    <DatePicker onChange={(birthday) => setDateValue(birthday)} selected={birthday} className="date-picker" />
+                    <DatePicker onChange={(birthday) => setBirthday(birthday)} selected={birthday} className="date-picker" />
                 </div>
                 <div className="calendar-container">
                     <label>
