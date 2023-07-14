@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../Components/NavBar/NavBar';
-import AboutPage from '../AboutPage/AboutPage';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
@@ -59,8 +58,7 @@ export default function App() {
 				<div>
 					<NavBar user={user} setUser={setUser} handleLogout={handleLogout} />
 					<Routes>
-						<Route exact path='/dashboard' element={<DashboardPage user={user} files={files} />} />
-						<Route exact path='/' element={<AboutPage />} />
+						<Route exact path='/' element={<DashboardPage user={user} files={files} />} />
 						<Route exact path='/newfile' element={<NewFilePage user={user} />} />
 						<Route exact path='/editfile/:id' element={<EditFilePage user={user} />} />
 						<Route exact path='/filedetails/:id' element={<FileDetailsPage user={user} />} />

@@ -18,13 +18,11 @@ export default function InputForm({
 		<div className='post-wrapper input-form'>
 			<form onSubmit={handleSubmit} className='new-file-form'>
 				<label>
-					<h4>Title</h4>
-					<p>name or description</p>
+					<h4>Name or Description</h4>
 					<textarea name='title' value={fileData.title} type='text' onChange={handleChange} />
 				</label>
 				<label>
-					<h4>Relationship</h4>
-					<p>who they are to you</p>
+					<h4>Relationship to You</h4>
 					<textarea
 						name='relationship'
 						value={fileData.relationship}
@@ -33,8 +31,7 @@ export default function InputForm({
 					/>
 				</label>
 				<label>
-					<h4>Circumstances</h4>
-					<p>major life events</p>
+					<h4>Circumstances and Life Events</h4>
 					<textarea
 						name='circumstances'
 						value={fileData.circumstances}
@@ -50,9 +47,8 @@ export default function InputForm({
                 </div>
 				<div className='calendar-container'>
 					<label>
-						<h4>Date</h4>
+						<h4>Last Interaction</h4>
 					</label>
-					<p>last time you interacted</p>
 					<DatePicker
 						onChange={(date) => setDateValue(date)}
 						selected={dateValue}
@@ -64,7 +60,7 @@ export default function InputForm({
 					<textarea name='notes' value={fileData.notes} type='text' onChange={handleChange} />
 				</label>
 				<div className='btn postbtn1'>
-					<input className='postBtn' type='submit' value='Save File' />
+					<input className='postBtn' type='submit' value='Save' />
 				</div>
 			</form>
 		</div>

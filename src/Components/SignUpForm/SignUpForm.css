@@ -1,0 +1,36 @@
+.form-container>form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-fields {
+    display: flex;
+}
+
+.form-fields>* {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
+.name-and-email>label,
+.password-and-confirm>label {
+    margin: 1rem;
+}
+
+.name-and-email>label>input,
+.password-and-confirm>label>input {
+    padding: .25rem;
+    margin-left: 1rem;
+}
+
+.signup-btn {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    width: 5rem;
+    height: 2.5rem;
+    border-style: none;
+    margin-top: 1rem;
+}
