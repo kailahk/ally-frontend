@@ -9,6 +9,8 @@ import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 import EditFilePage from '../EditFilePage/EditFilePage';
 
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function App() {
 	const [user, setUser] = useState(null);
 	const [files, setFiles] = useState([]);
