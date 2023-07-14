@@ -2,6 +2,6 @@ import './AboutPage.css'
 
 export default function AboutPage() {
     return (
-        <h1>About Page</h1>
+        <h1 className='about-page'>About Page</h1>
     )
 }

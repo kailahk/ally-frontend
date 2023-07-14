@@ -32,7 +32,7 @@ export default function LoginForm({ fetchUser }) {
 	}
 
 	return (
-		<div>
+		<div className='login-form'>
 			<div className='login-form'>
 				<form autoComplete='off' onSubmit={handleSubmit}>
 					<input

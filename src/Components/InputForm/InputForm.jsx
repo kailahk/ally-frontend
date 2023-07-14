@@ -56,7 +56,7 @@ export default function InputForm({user}) {
         }
     }
     return (
-        <div className="post-wrapper">
+        <div className="post-wrapper input-form">
             <form onSubmit={handleSubmit} className="new-file-form">
                 <label>
                     <h4>Title</h4>
