@@ -33,18 +33,15 @@ export default function FileDetailsPage({ user }) {
 
     const getFile = async () => {
         try {
-            const response = await fetch(BASE_URL + `/info/getFiles`, {
-                method: "POST",
+            const response = await fetch(BASE_URL + `/info/${id}`, {
+                method: "GET",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    userid: user._id,
-                    fileid: id
-                })
             });
             const result = await response.json();
-            setFile(result[0]);
+            console.log(result)
+            setFile(result);
         } catch (err) {
             console.error(err);
         }
@@ -52,6 +49,10 @@ export default function FileDetailsPage({ user }) {
     useEffect(() => {
         getFile();
     }, []);
+
+    const editFile = async () => {
+        
+    }
 
     const deleteFile = async () => {
         try {
@@ -86,6 +87,9 @@ export default function FileDetailsPage({ user }) {
             <Link to='/dashboard'>
                 <button className="" onClick={() => deleteFile()}>
                     Delete
+                </button>
+                <button className="" onClick={() => editFile()}>
+                    Edit
                 </button>
             </Link>
             <button onClick={handleClick}>Get AI-Generated resources</button>
