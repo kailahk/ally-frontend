@@ -4,7 +4,7 @@ import { useState } from 'react';
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
 		? 'http://localhost:8000'
-		: 'https://web-production-caf1c.up.railway.app/';
+		: 'https://web-production-caf1c.up.railway.app';
 
 export default function LoginForm({ fetchUser }) {
     const [credentials, setCredentials] = useState({
