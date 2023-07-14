@@ -6,7 +6,7 @@ import './NewFilePage.css';
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
 		? 'http://localhost:8000'
-		: 'https://web-production-caf1c.up.railway.app/';
+		: 'https://web-production-caf1c.up.railway.app';
 
 export default function NewFilePage({ user }) {
 	const [posts, setPosts] = useState([]);
