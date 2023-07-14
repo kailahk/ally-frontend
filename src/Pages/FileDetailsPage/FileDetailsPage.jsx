@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ChatResponse from '../../Components/ChatResponse/ChatResponse';
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const SERVER_URL = import.meta.env.REACT_APP_SERVER_URLL;
 
 export default function FileDetailsPage({ user }) {
 	const { id } = useParams();

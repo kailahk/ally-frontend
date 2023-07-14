@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import InputForm from '../../Components/InputForm/InputForm';
 import './EditFilePage.css';
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const SERVER_URL = import.meta.env.REACT_APP_SERVER_URL;
 
 export default function EditFilePage({ user }) {
 	const [puts, setPuts] = useState([]);
