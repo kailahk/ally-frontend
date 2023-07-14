@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import InputForm from '../../Components/InputForm/InputForm';
 import './EditFilePage.css';
 
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function EditFilePage({ user }) {
 	const [puts, setPuts] = useState([]);
 	const navigate = useNavigate();
@@ -20,8 +22,6 @@ export default function EditFilePage({ user }) {
 
 	const { id } = useParams();
 
-	const BASE_URL = 'http://localhost:8000';
-
 	const handleChange = (e) => {
 		const userInput = { ...putForm };
 		userInput[e.target.name] = e.target.value;
@@ -38,7 +38,7 @@ export default function EditFilePage({ user }) {
 				},
 				body: JSON.stringify({ ...putForm, birthday: birthday, date: dateValue }),
 			};
-			const response = await fetch(BASE_URL + '/info/putFile/' + id, requestOptions);
+			const response = await fetch(SERVER_URL + '/info/putFile/' + id, requestOptions);
 			const newPut = await response.json();
 			setPutForm([...puts, newPut]);
 			setPutForm({
@@ -57,7 +57,7 @@ export default function EditFilePage({ user }) {
 
 	const getFile = async () => {
 		try {
-			const response = await fetch(BASE_URL + `/info/${id}`, {
+			const response = await fetch(SERVER_URL + `/info/${id}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json',

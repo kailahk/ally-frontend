@@ -25,7 +25,7 @@ export default function App() {
 
 	async function fetchUser(token) {
 		try {
-			const res = await fetch('http://localhost:8000/users/me', {
+			const res = await fetch(SERVER_URL + '/users/me', {
 				method: 'GET',
 				headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
 			});

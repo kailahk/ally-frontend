@@ -1,6 +1,8 @@
 import './LoginForm.css'
 import { useState } from 'react';
 
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function LoginForm({ fetchUser }) {
 	const [credentials, setCredentials] = useState({
 		email: '',
@@ -16,7 +18,7 @@ export default function LoginForm({ fetchUser }) {
 	async function handleSubmit(evt) {
 		evt.preventDefault();
 		try {
-			const res = await fetch('http://localhost:8000/users/login', {
+			const res = await fetch(SERVER_URL + '/users/login', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(credentials),

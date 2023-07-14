@@ -3,8 +3,9 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ChatResponse from '../../Components/ChatResponse/ChatResponse';
 
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function FileDetailsPage({ user }) {
-	const BASE_URL = 'http://localhost:8000';
 	const { id } = useParams();
 	const [File, setFile] = useState([]);
 	const [chatRes, setChatRes] = useState('');
@@ -54,7 +55,7 @@ export default function FileDetailsPage({ user }) {
 	async function handleClick() {
 		setLoading(true);
 		try {
-			const res = await fetch(BASE_URL + '/chat', {
+			const res = await fetch(SERVER_URL + '/chat', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ messages: prompt }),
@@ -69,7 +70,7 @@ export default function FileDetailsPage({ user }) {
 
 	const getFile = async () => {
 		try {
-			const response = await fetch(BASE_URL + `/info/${id}`, {
+			const response = await fetch(SERVER_URL + `/info/${id}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json',
@@ -109,7 +110,7 @@ export default function FileDetailsPage({ user }) {
 
 	const deleteFile = async () => {
 		try {
-			const response = await fetch(BASE_URL + `/info/deleteFile`, {
+			const response = await fetch(SERVER_URL + `/info/deleteFile`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
