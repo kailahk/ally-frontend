@@ -6,17 +6,18 @@ import PropTypes from 'prop-types'
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default function InputForm({user}) {
+export default function InputForm({ user }) {
     const [posts, setPosts] = useState([])
     const navigate = useNavigate();
     const [dateValue, setDateValue] = useState(new Date());
+    const [birthday, setBirthday] = useState(new Date());
     const [postForm, setPostform] = useState({
         title: "",
         relationship: "",
         circumstances: "",
-        age: "",
+        birthday: "",
         date: dateValue,
-        notes: "",
+        notes: birthday,
         userid: user._id
     });
 
@@ -32,25 +33,25 @@ export default function InputForm({user}) {
         e.preventDefault();
         const currentState = { ...postForm }
         try {
-           const requestOptions = {
-            method: "POST",
-            headers: {
-                "content-Type": "application/json",
-            },
-            body: JSON.stringify(currentState),
-           };
-           const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
-           const newPost = await response.json();
-           setPostform([...posts, newPost]);
-           setPostform({
-            title: "",
-            relationship:"",
-            circumstances: "",
-            age: "",
-            dates: "",
-            userNotes: ""
-           })
-           navigate("/dashboard")
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "content-Type": "application/json",
+                },
+                body: JSON.stringify(currentState),
+            };
+            const response = await fetch(BASE_URL + "/info/createFile", requestOptions);
+            const newPost = await response.json();
+            setPostform([...posts, newPost]);
+            setPostform({
+                title: "",
+                relationship: "",
+                circumstances: "",
+                birthday: "",
+                date: "",
+                notes: ""
+            })
+            navigate("/dashboard")
         } catch (err) {
             console.log(err);
         }
@@ -75,11 +76,12 @@ export default function InputForm({user}) {
                     <textarea name="circumstances" value={postForm.circumstances} type="text" onChange={handleChange} />
 
                 </label>
-                <label>
-                    <h4>Age</h4>
-                    <input name="age" value={postForm.age} type="number" onChange={handleChange} />
-
-                </label>
+                <div className="calendar-container">
+                    <label>
+                        <h4>Birthday</h4>
+                    </label>
+                    <DatePicker onChange={(birthday) => setDateValue(birthday)} selected={birthday} className="date-picker" />
+                </div>
                 <div className="calendar-container">
                     <label>
                         <h4>Date</h4>
