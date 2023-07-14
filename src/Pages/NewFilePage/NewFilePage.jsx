@@ -7,12 +7,13 @@ export default function NewFilePage({ user }) {
 	const [posts, setPosts] = useState([]);
 	const navigate = useNavigate();
 	const [dateValue, setDateValue] = useState(new Date());
+	const [birthday, setBirthday] = useState(new Date());
 	const [postForm, setPostform] = useState({
 		title: '',
 		relationship: '',
 		circumstances: '',
-		age: '',
-		date: dateValue,
+		birthday: new Date(),
+		date: new Date(),
 		notes: '',
 		userid: user._id,
 	});
@@ -27,13 +28,14 @@ export default function NewFilePage({ user }) {
 
 	const handleCreateFile = async (e) => {
 		e.preventDefault();
+		const currentState = { ...postForm, birthday, date: dateValue };
 		try {
 			const requestOptions = {
 				method: 'POST',
 				headers: {
 					'content-Type': 'application/json',
 				},
-				body: JSON.stringify(postForm),
+				body: JSON.stringify(currentState),
 			};
 			const response = await fetch(BASE_URL + '/info/createFile', requestOptions);
 			const newPost = await response.json();
@@ -42,9 +44,9 @@ export default function NewFilePage({ user }) {
 				title: '',
 				relationship: '',
 				circumstances: '',
-				age: '',
-				dates: '',
-				userNotes: '',
+				birthday: '',
+				date: '',
+				notes: '',
 			});
 			navigate('/dashboard');
 		} catch (err) {
@@ -61,6 +63,8 @@ export default function NewFilePage({ user }) {
 				handleChange={handleChange}
 				setDateValue={setDateValue}
 				dateValue={dateValue}
+				birthday={birthday}
+				setBirthday={setBirthday}
 			/>
 		</div>
 	);

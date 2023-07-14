@@ -3,27 +3,16 @@ import { useState, useEffect } from 'react';
 import InputForm from '../../Components/InputForm/InputForm';
 import './EditFilePage.css';
 
-const dateConversationOptions = {
-	timeZone: 'America/Los_Angeles',
-	weekday: 'short',
-	year: 'numeric',
-	month: 'short',
-	day: 'numeric',
-	hour: 'numeric',
-	minute: 'numeric',
-	second: 'numeric',
-	timeZoneName: 'short',
-};
-
 export default function EditFilePage({ user }) {
 	const [puts, setPuts] = useState([]);
 	const navigate = useNavigate();
 	const [dateValue, setDateValue] = useState(null);
+	const [birthday, setBirthday] = useState(null);
 	const [putForm, setPutForm] = useState({
 		title: '',
 		relationship: '',
 		circumstances: '',
-		age: '',
+		birthday: birthday,
 		date: dateValue,
 		notes: '',
 		userid: user._id,
@@ -46,9 +35,8 @@ export default function EditFilePage({ user }) {
 				method: 'PUT',
 				headers: {
 					'content-Type': 'application/json',
-					// authorization: `Bearer ${localStorage.getItem('token')}`,
 				},
-				body: JSON.stringify({ ...putForm, date: dateValue }),
+				body: JSON.stringify({ ...putForm, birthday: birthday, date: dateValue }),
 			};
 			const response = await fetch(BASE_URL + '/info/putFile/' + id, requestOptions);
 			const newPut = await response.json();
@@ -57,7 +45,7 @@ export default function EditFilePage({ user }) {
 				title: '',
 				relationship: '',
 				circumstances: '',
-				age: '',
+				birthday: '',
 				date: '',
 				notes: '',
 			});
@@ -80,15 +68,14 @@ export default function EditFilePage({ user }) {
 				title: result.title,
 				relationship: result.relationship,
 				circumstances: result.circumstances,
-				age: result.age,
 				notes: result.notes,
 			};
-			console.log('Before', result.date);
 			const date = new Date(result.date);
-			// console.log('After', date.toLocaleDateString('en-us', dateConversationOptions));
+			const bday = new Date(result.birthday);
 
 			setPutForm(newForm);
 			setDateValue(date);
+			setBirthday(bday);
 		} catch (err) {
 			console.error(err);
 		}
@@ -97,9 +84,6 @@ export default function EditFilePage({ user }) {
 	useEffect(() => {
 		getFile();
 	}, []);
-
-	console.log({ putForm });
-	console.log({ dateValue });
 
 	return (
 		<div className='edit-file-page'>
@@ -111,6 +95,8 @@ export default function EditFilePage({ user }) {
 				handleChange={handleChange}
 				setDateValue={setDateValue}
 				dateValue={dateValue}
+				birthday={birthday}
+				setBirthday={setBirthday}
 			/>
 		</div>
 	);

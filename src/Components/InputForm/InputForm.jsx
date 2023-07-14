@@ -5,13 +5,14 @@ import './InputForm.css';
 import PropTypes from 'prop-types'
 import "react-datepicker/dist/react-datepicker.css";
 
-
 export default function InputForm({
 	fileData,
 	handleSubmit,
 	handleChange,
 	dateValue,
 	setDateValue,
+    birthday,
+    setBirthday
 }) {
 	return (
 		<div className='post-wrapper input-form'>
@@ -41,10 +42,12 @@ export default function InputForm({
 						onChange={handleChange}
 					/>
 				</label>
-				<label>
-					<h4>Age</h4>
-					<input name='age' value={fileData.age} type='number' onChange={handleChange} />
-				</label>
+                <div className="calendar-container">
+                    <label>
+                        <h4>Birthday</h4>
+                    </label>
+                    <DatePicker onChange={(birthday) => setBirthday(birthday)} selected={birthday} className="date-picker" />
+                </div>
 				<div className='calendar-container'>
 					<label>
 						<h4>Date</h4>
