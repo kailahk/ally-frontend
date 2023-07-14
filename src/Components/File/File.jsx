@@ -23,7 +23,6 @@ export default function FileList({user}) {
         });
         const allFiles = await response.json();
         setFiles(allFiles);
-        console.log(allFiles);
       } catch (err) {
         console.error(err);
       }
@@ -33,7 +32,7 @@ export default function FileList({user}) {
     }, []);
   
     return (
-      <>
+      <div className="file">
         <h2>Files </h2>
         <ul>
           {Files &&
@@ -53,7 +52,7 @@ export default function FileList({user}) {
               </div>
             ))}
         </ul>
-      </>
+      </div>
     );
   };
   

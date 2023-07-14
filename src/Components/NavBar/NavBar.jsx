@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar({ user, handleLogout }) {
 	return (
-		<nav>
+		<nav className='navbar'>
 			<Link to='/dashboard'>Dashboard</Link>
 			<Link to='/'>About</Link>
 			<Link to='' onClick={handleLogout}>
