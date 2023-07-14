@@ -3,7 +3,8 @@ import { useState, useEffect, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ChatResponse from '../../Components/ChatResponse/ChatResponse';
 
-const SERVER_URL = import.meta.env.REACT_APP_SERVER_URL;
+const SERVER_URL =
+	import.meta.env.Node_ENV === 'dev' ? 'http://localhost:8000' : 'https://ally-fj80.onrender.com';
 
 export default function FileDetailsPage({ user }) {
 	const { id } = useParams();
