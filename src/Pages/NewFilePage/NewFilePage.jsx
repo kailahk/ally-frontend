@@ -3,6 +3,8 @@ import { useState } from 'react';
 import InputForm from '../../Components/InputForm/InputForm';
 import './NewFilePage.css';
 
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function NewFilePage({ user }) {
 	const [posts, setPosts] = useState([]);
 	const navigate = useNavigate();
@@ -17,8 +19,6 @@ export default function NewFilePage({ user }) {
 		notes: '',
 		userid: user._id,
 	});
-
-	const BASE_URL = 'http://localhost:8000';
 
 	const handleChange = (e) => {
 		const userInput = { ...postForm };
@@ -37,7 +37,7 @@ export default function NewFilePage({ user }) {
 				},
 				body: JSON.stringify(currentState),
 			};
-			const response = await fetch(BASE_URL + '/info/createFile', requestOptions);
+			const response = await fetch(SERVER_URL + '/info/createFile', requestOptions);
 			const newPost = await response.json();
 			setPostform([...posts, newPost]);
 			setPostform({
