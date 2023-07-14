@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './SignUpForm.css'
 
 const SERVER_URL =
-    process.env.NODE_ENV === 'development'
-        ? 'http://localhost:8000'
-        : 'https://ally-fj80.onrender.com';
+	process.env.NODE_ENV === 'development'
+		? 'http://localhost:8000'
+		: 'https://web-production-caf1c.up.railway.app/';
 
 export default function SignUpForm({ setUser }) {
     const [signUpForm, setSignUpForm] = useState({

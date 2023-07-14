@@ -4,9 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 import ChatResponse from '../../Components/ChatResponse/ChatResponse';
 
 const SERVER_URL =
-    process.env.NODE_ENV === 'development'
-        ? 'http://localhost:8000'
-        : 'https://ally-fj80.onrender.com';
+	process.env.NODE_ENV === 'development'
+		? 'http://localhost:8000'
+		: 'https://web-production-caf1c.up.railway.app/';
 
 export default function FileDetailsPage({ user }) {
     const { id } = useParams();

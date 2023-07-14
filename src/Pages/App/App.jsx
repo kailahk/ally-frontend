@@ -11,7 +11,7 @@ import EditFilePage from '../EditFilePage/EditFilePage';
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
 		? 'http://localhost:8000'
-		: 'https://ally-fj80.onrender.com';
+		: 'https://web-production-caf1c.up.railway.app/';
 
 export default function App() {
 	const [user, setUser] = useState(null);
