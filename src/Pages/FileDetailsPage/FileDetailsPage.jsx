@@ -50,52 +50,53 @@ export default function FileDetailsPage({ user }) {
         getFile();
     }, []);
 
-    const editFile = async () => {
-        
-    }
-
     const deleteFile = async () => {
-        try {
-            const response = await fetch(BASE_URL + `/info/deleteFile`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    userid: user._id,
-                    fileid: id
-                })
-            });
-            const result = await response.json();
-            setFile(result[0]);
-        } catch (err) {
-            console.error(err);
-        }
-    };
-    const fileDate = new Date(File.date).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"});
-    const arrChatRes = chatRes.split('\n').filter((line) => line !== "");
-    const chatResponses = arrChatRes.map((line, idx) => <ChatResponse line={line} key={idx}/>)
-    return (
-        <div className='file-details-page'>
-            <h1>File Details Page</h1>
-            <p>Name or Description: {File.title}</p>
-            <p>Last Interacted: {fileDate}</p>
-            <p>Relationship: {File.relationship}</p>
-            <p>Age: {File.age}</p>
-            <p>Circustances: {File.circumstances}</p>
-            <p>Notes: {File.notes}</p>
-            <Link to='/dashboard'>
-                <button className="" onClick={() => deleteFile()}>
-                    Delete
-                </button>
-                <button className="" onClick={() => editFile()}>
-                    Edit
-                </button>
-            </Link>
-            <button onClick={handleClick}>Get AI-Generated resources</button>
-            <p>{error}</p>
-            <p>{loading ? 'Gathering Resources' : ''}</p>
-            {chatResponses}
-        </div>
-    )
+			try {
+				const response = await fetch(BASE_URL + `/info/deleteFile`, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						userid: user._id,
+						fileid: id,
+					}),
+				});
+				const result = await response.json();
+				setFile(result[0]);
+			} catch (err) {
+				console.error(err);
+			}
+		};
+		const fileDate = new Date(File.date).toLocaleDateString('en-us', {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		});
+		const arrChatRes = chatRes.split('\n').filter((line) => line !== '');
+		const chatResponses = arrChatRes.map((line, idx) => <ChatResponse line={line} key={idx} />);
+		return (
+			<div className='file-details-page'>
+				<h1>File Details Page</h1>
+				<p>Name or Description: {File.title}</p>
+				<p>Last Interacted: {fileDate}</p>
+				<p>Relationship: {File.relationship}</p>
+				<p>Age: {File.age}</p>
+				<p>Circustances: {File.circumstances}</p>
+				<p>Notes: {File.notes}</p>
+				<Link to='/dashboard'>
+					<button className='' onClick={() => deleteFile()}>
+						Delete
+					</button>
+				</Link>
+				<Link to={`/editfile/${id}`}>
+					<button className=''>Edit</button>
+				</Link>
+				<button onClick={handleClick}>Get AI-Generated resources</button>
+				<p>{error}</p>
+				<p>{loading ? 'Gathering Resources' : ''}</p>
+				{chatResponses}
+			</div>
+		);
 }
