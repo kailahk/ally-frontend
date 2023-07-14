@@ -1,7 +1,7 @@
 import './LoginForm.css'
 import { useState } from 'react';
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const SERVER_URL = import.meta.env.REACT_APP_SERVER_URL;
 
 export default function LoginForm({ fetchUser }) {
 	const [credentials, setCredentials] = useState({
