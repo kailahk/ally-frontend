@@ -51,14 +51,16 @@ export default function NewFilePage({ user }) {
 				date: '',
 				notes: '',
 			});
-			navigate('/dashboard');
+			navigate('/');
 		} catch (err) {
 			console.log(err);
 		}
 	};
 	return (
 		<div className='new-file-page'>
-			<h1>New File Page</h1>
+            <h1>Add Person</h1>
+            <hr />
+            <br />
 			<InputForm
 				user={user}
 				fileData={postForm}

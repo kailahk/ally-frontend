@@ -1,0 +1,24 @@
+.new-file-form>* {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 26rem;
+    margin: 1rem auto;
+    text-align: left;
+}
+
+.postBtn {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    width: 4.5rem;
+    height: 2.5rem;
+    border-style: none;
+    margin-left: 10rem;
+    margin-top: 3rem;
+}
+
+.new-file-form>label>textArea {
+    padding: .25rem;
+    margin-left: 1rem;
+}

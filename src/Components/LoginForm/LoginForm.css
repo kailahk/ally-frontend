@@ -1,0 +1,27 @@
+.login-form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-btn {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    width: 5rem;
+    height: 2.5rem;
+    border-style: none;
+}
+
+.login-form > form > label > input {
+    padding: .25rem;
+    margin-left: 1rem;
+}
+
+form > label {
+    margin-bottom: 2rem;
+}
+
+.email-input {
+    margin-right: -1.5rem;
+}

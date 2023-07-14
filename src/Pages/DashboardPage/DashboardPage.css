@@ -1,0 +1,21 @@
+.new-file-btn {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    width: 6rem;
+    height: 2.5rem;
+    border-style: none;
+    margin-top: 2rem;
+}
+
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-page > h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
