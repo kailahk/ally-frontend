@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 //     console.log(file)
 // }
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const SERVER_URL = import.meta.env.REACT_APP_SERVER_URL;
 
 export default function FileList({user}) {
 // const FileList = ({user}) => {

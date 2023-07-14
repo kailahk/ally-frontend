@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './SignUpForm.css'
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const SERVER_URL = import.meta.env.REACT_APP_SERVER_URL;
 
 export default function SignUpForm({ setUser }) {
 	const [signUpForm, setSignUpForm] = useState({
