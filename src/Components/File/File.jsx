@@ -6,27 +6,28 @@ import { Link } from 'react-router-dom';
 //         const [posts, setPosts] = useState([]);
 //     console.log(file)
 // }
+
+const SERVER_URL = import.meta.env.SERVER_URL;
+
 export default function FileList({user}) {
 // const FileList = ({user}) => {
     const [Files, setFiles] = useState([]);
   
-    const BASE_URL = "http://localhost:8000";
-  
     const getFiles = async () => {
-      try {
-        const response = await fetch(BASE_URL + "/info/getFiles", {
-            method: "POST",
-            headers: {
-                "content-Type": "application/json",
-            },
-            body: JSON.stringify({ "userid": user._id })
-        });
-        const allFiles = await response.json();
-        setFiles(allFiles);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+			try {
+				const response = await fetch(SERVER_URL + '/info/getFiles', {
+					method: 'POST',
+					headers: {
+						'content-Type': 'application/json',
+					},
+					body: JSON.stringify({ userid: user._id }),
+				});
+				const allFiles = await response.json();
+				setFiles(allFiles);
+			} catch (err) {
+				console.error(err);
+			}
+		};
     useEffect(() => {
       getFiles();
     }, []);
