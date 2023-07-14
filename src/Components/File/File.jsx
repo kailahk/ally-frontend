@@ -8,56 +8,48 @@ import { Link } from 'react-router-dom';
 // }
 
 const SERVER_URL =
-	process.env.NODE_ENV === 'development'
-		? 'http://localhost:8000'
-		: 'https://ally-fj80.onrender.com';
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://ally-fj80.onrender.com';
 
-export default function FileList({user}) {
-// const FileList = ({user}) => {
+export default function FileList({ user }) {
     const [Files, setFiles] = useState([]);
-  
+
     const getFiles = async () => {
-			try {
-				const response = await fetch(SERVER_URL + '/info/getFiles', {
-					method: 'POST',
-					headers: {
-						'content-Type': 'application/json',
-					},
-					body: JSON.stringify({ userid: user._id }),
-				});
-				const allFiles = await response.json();
-				setFiles(allFiles);
-			} catch (err) {
-				console.error(err);
-			}
-		};
+        try {
+            const response = await fetch(SERVER_URL + '/info/getFiles', {
+                method: 'POST',
+                headers: {
+                    'content-Type': 'application/json',
+                },
+                body: JSON.stringify({ userid: user._id }),
+            });
+            const allFiles = await response.json();
+            setFiles(allFiles);
+        } catch (err) {
+            console.error(err);
+        }
+    };
     useEffect(() => {
-      getFiles();
+        getFiles();
     }, []);
-  
+
     return (
-      <div className="file">
-        <h2>Files </h2>
-        <ul>
-          {Files &&
-            Files.map((file) => (
-              <div className="" key={file._id}>
-                <Link  to={`/filedetails/${file._id}`}>
-                  <div className="title">
-                  <h1>{file.title}</h1>
-                  </div>
-                  {/* <div className="ptags">
-                  <p>{post.name}</p>
-                  </div> */}
-                  {/* <div className="HeartPost">
-                  <HeartRating fixedRating={post.rating} setRating={() => {}} />
-                  </div> */}
-                </Link>
-              </div>
-            ))}
+        <ul className='file'>
+            {Files &&
+                Files.map((file) => (
+                    <div className="file-summary" key={file._id}>
+                        <Link to={`/filedetails/${file._id}`}>
+                            <div className="title">
+                                <div className='icon-summary'></div>
+                                <p><span>{file.title}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p className='relationship-summary'>{file.relationship}</p>
+                            </div>
+                        </Link>
+                        <hr />
+                    </div>
+                ))}
         </ul>
-      </div>
     );
-  };
-  
-//   export default FileList;
+};
+

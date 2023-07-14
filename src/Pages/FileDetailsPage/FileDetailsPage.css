@@ -1,0 +1,104 @@
+.icon-details {
+    background-color: #efa73442;
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    margin: 2rem 2rem 0 0
+}
+
+.details-header {
+    display: flex;
+    width: 40rem;
+    justify-content: flex-start;
+    margin: 1rem auto 2rem auto;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-title > p {
+    width: 15rem;
+    text-align: left;
+    overflow-x: scroll;
+}
+
+.header-title>h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.details-and-reminders {
+    display: flex;
+    justify-content: center;
+    width: 45rem;
+    margin: 0 auto;
+}
+
+.file-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 28rem;
+    margin: 0 auto;
+}
+
+.file-details-page>hr {
+    border: .09rem solid #efa73442;
+    width: 45rem;
+}
+
+.file-details>p {
+    padding: .65rem 0;
+    text-align: left;
+    width: 25rem;
+    overflow-x: scroll;
+}
+
+.file-details>p>span,
+.reminders, .resources {
+    font-weight: 700
+}
+
+.gathering-resources {
+    color: rgba(128, 128, 128, 0.857)
+}
+
+.delete-btn, .edit-btn {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    width: 3.5rem;
+    height: 2rem;
+    margin: 1rem .5rem;
+    border-style: none;
+}
+
+.ai-btn, .reminder-btn {
+    border-radius: .5rem;
+    background-color: #47a45832;
+    border: .09rem solid #47A458;
+    color: black;
+    width: 10rem;
+    height: 3rem;
+    margin: 2rem 2.5rem 0 2.5rem;
+    font-weight: 700;
+}
+
+.reminder-btn {
+    background-color: #4a67fa35;
+    border: .09rem solid #4A66FA;
+}
+
+.chat-response {
+    width: 40rem;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: -2rem;
+}
+
+.reminder-functionality {
+    margin-top: 2rem;
+}

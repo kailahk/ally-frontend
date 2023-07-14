@@ -4,17 +4,13 @@ import FileList from '../../Components/File/File';
 
 
 export default function DashboardPage({ files, user }) {
-    // const filesList = files.map((file, idx) => <File
-    //     key={idx}
-    //     file={file}
-    // />)
+
     return (
         <div className='dashboard-page'>
-            <h1>Dashboard Page</h1>
-
+            <h2>People</h2>
             <FileList user={user} />
             <Link to='/newfile'>
-                <button>New File</button>
+                <button className='new-file-btn'>Add Person</button>
             </Link>
         </div>
     )
