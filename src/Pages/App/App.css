@@ -40,3 +40,9 @@
 .error-message {
   color: red;
 }
+
+.name, .email, .password, .confirm {
+  text-align: right;
+  margin-right: 3vmin;
+  font-size: 2vmin;
+}

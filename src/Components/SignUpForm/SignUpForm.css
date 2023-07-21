@@ -1,4 +1,4 @@
-.form-fields {
+.signup-form > form > .form-fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -6,12 +6,12 @@
     margin: 0 auto;
 }
 
-.form-fields > input, .form-fields > label {
+.signup-form > form > .form-fields > input, .form-fields > label {
     margin-top: 3vmin;
     padding: .75vmin;
 }
 
-.form-fields > input {
+.signup-form > form > .form-fields > input {
     background-color: #BCCADB;
     border-style: none;
     border-radius: 2vmin;
@@ -34,10 +34,4 @@
     text-decoration: none;
     border: .2vmin solid #e25b51;
     color: #e25b51;
-}
-
-.name, .email, .password, .confirm {
-    text-align: right;
-    margin-right: 3vmin;
-    font-size: 2vmin;
 }

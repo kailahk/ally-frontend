@@ -2,9 +2,9 @@ import './LoginForm.css'
 import { useState } from 'react';
 
 const SERVER_URL =
-	process.env.NODE_ENV === 'development'
-		? 'http://localhost:8000'
-		: 'https://web-production-caf1c.up.railway.app';
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://web-production-caf1c.up.railway.app';
 
 export default function LoginForm({ fetchUser }) {
     const [credentials, setCredentials] = useState({
@@ -38,31 +38,31 @@ export default function LoginForm({ fetchUser }) {
 
     return (
         <div className='login-form'>
-            <div className='login-form'>
-                <form autoComplete='off' onSubmit={handleSubmit}>
-                    <label>Email
-                        <input
-                            className='email-input'
-                            type='text'
-                            name='email'
-                            value={credentials.email}
-                            onChange={handleChange}
-                            required
-                        />
+            <form autoComplete='off' onSubmit={handleSubmit}>
+                <div className='form-fields'>
+                    <label className='email'>Email:
                     </label>
-                    <label>Password
-                        <input
-                            type='password'
-                            name='password'
-                            value={credentials.password}
-                            onChange={handleChange}
-                            required
-                        />
+                    <input
+                        className='email-input'
+                        type='text'
+                        name='email'
+                        value={credentials.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className='password'>Password:
                     </label>
-                    <button className="login-btn" type='submit'>LOG IN</button>
-                </form>
-            </div>
+                    <input
+                        type='password'
+                        name='password'
+                        value={credentials.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button className="login-btn" type='submit'>LOG IN</button>
+            </form>
             <p className='error-message'>{error}</p>
-        </div>
+        </div >
     );
 }
