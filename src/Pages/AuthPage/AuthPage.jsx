@@ -11,7 +11,7 @@ export default function AuthPage({ setUser, fetchUser }) {
             <h1>ALLY</h1>
             <div className='auth-page-forms'>
                 {showAuthPage ? <SignUpForm setUser={setUser} fetchUser={fetchUser} /> : <LoginForm fetchUser={fetchUser} />}
-               <p>{showAuthPage ? 'Already have an account?' : 'Don\'t have an account yet?'}</p> 
+                <p>{showAuthPage ? 'Already have an account?' : 'Don\'t have an account yet?'}</p>
                 <p className='login-option-btn' onClick={() => setShowAuthPage(!showAuthPage)}>
                     {showAuthPage ? 'Login' : 'Sign Up'}
                 </p>

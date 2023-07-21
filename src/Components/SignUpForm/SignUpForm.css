@@ -1,36 +1,43 @@
-.form-container>form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .form-fields {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 30vmin;
+    margin: 0 auto;
 }
 
-.form-fields>* {
-    display: flex;
-    flex-direction: column;
-    align-items: space-between;
+.form-fields > input, .form-fields > label {
+    margin-top: 3vmin;
+    padding: .75vmin;
 }
 
-.name-and-email>label,
-.password-and-confirm>label {
-    margin: 1rem;
+.form-fields > input {
+    background-color: #BCCADB;
+    border-style: none;
+    border-radius: 2vmin;
+    font-size: 1.5vmin;
 }
 
-.name-and-email>label>input,
-.password-and-confirm>label>input {
-    padding: .25rem;
-    margin-left: 1rem;
-}
 
 .signup-btn {
-    border-radius: 3rem;
-    background-color: black;
+    background-color: #EDAF90;
+    border: .2vmin solid transparent;
     color: white;
-    width: 5rem;
-    height: 2.5rem;
-    border-style: none;
-    margin-top: 1rem;
+    border-radius: 4vmin;
+    padding: 1vmin;
+    margin: 4vmin 0 2vmin 0;
+    font-size: 1.8vmin;
+}
+
+.signup-btn:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: .2vmin solid #e25b51;
+    color: #e25b51;
+}
+
+.name, .email, .password, .confirm {
+    text-align: right;
+    margin-right: 3vmin;
+    font-size: 2vmin;
 }

@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './SignUpForm.css'
 
 const SERVER_URL =
-	process.env.NODE_ENV === 'development'
-		? 'http://localhost:8000'
-		: 'https://web-production-caf1c.up.railway.app';
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://web-production-caf1c.up.railway.app';
 
 export default function SignUpForm({ setUser }) {
     const [signUpForm, setSignUpForm] = useState({
@@ -53,49 +53,43 @@ export default function SignUpForm({ setUser }) {
 
     return (
         <div className='signup-form'>
-            <div className='form-container'>
-                <form autoComplete='off' onSubmit={handleSubmit}>
-                    <div className='form-fields'>
-                        <div className='name-and-email'>
-                            <label>Name
-                            <input type='text' name='name' value={signUpForm.name} onChange={handleChange} required />
-                            </label>
-                            <label>Email
-                            <input
-                                type='email'
-                                name='email'
-                                value={signUpForm.email}
-                                onChange={handleChange}
-                                required
-                            />
-                            </label>
-                        </div>
-                        <div className='password-and-confirm'>
-                            <label>Password
-                            <input
-                                type='password'
-                                name='password'
-                                value={signUpForm.password}
-                                onChange={handleChange}
-                                required
-                            />
-                            </label>
-                            <label>Confirm
-                            <input
-                                type='password'
-                                name='confirm'
-                                value={signUpForm.confirm}
-                                onChange={handleChange}
-                                required
-                            />
-                            </label>
-                        </div>
-                    </div>
-                    <button className='signup-btn' type='submit'>
-                        SIGN UP
-                    </button>
-                </form>
-            </div>
+            <form autoComplete='off' onSubmit={handleSubmit}>
+                <div className='form-fields'>
+                    <label className='name'>Name:
+                    </label>
+                    <input type='text' name='name' value={signUpForm.name} onChange={handleChange} required />
+                    <label className='email'>Email:
+                    </label>
+                    <input
+                        type='email'
+                        name='email'
+                        value={signUpForm.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className='password'>Password:
+                    </label>
+                    <input
+                        type='password'
+                        name='password'
+                        value={signUpForm.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <label className='confirm'>Confirm:
+                    </label>
+                    <input
+                        type='password'
+                        name='confirm'
+                        value={signUpForm.confirm}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button className='signup-btn' type='submit'>
+                    SIGN UP
+                </button>
+            </form>
             <p className='error-message'> {error}</p>
         </div>
     );

@@ -68,7 +68,7 @@ export default function App() {
 			) : (
 				<Routes>
 					<Route exact path='/' element={<LandingPage />}></Route>
-					<Route exact path='/authpage' element={<AuthPage />}></Route>
+					<Route exact path='/authpage' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
 				</Routes>
 			)}
 		</main>
