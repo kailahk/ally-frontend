@@ -1,21 +1,34 @@
+@font-face {
+    font-family: glacialIndifference-black;
+    src: url(../../fonts/GlacialIndifference-Regular.otf);
+}
+
 .auth-page {
     display: flex;
     flex-direction: column;
+    background-color: #FAF3E7;
+    height: 100vh;
+}
+
+.auth-page>h1 {
+    font-family: tanMerengue-black;
+    color: #e25b51;
+    font-size: 8vmin;
+    margin-top: 5vmin;
+    margin-bottom: 0;
 }
 
 .auth-page-forms {
-    margin: 0 6rem;
-    margin-top: 5rem;
-    width: 50rem;
+    background-color: white;
+    width: 40vw;
+    margin: 0 auto;
+    margin-top: 5vmin;
+    padding: 3vmin;
+    border-radius: 2vmin;
+    box-shadow: 1.5vmin 1.5vmin 0 #BCCADB;
 }
 
 .login-option-btn {
-    background-color: white;
-    border-style: none;
     text-decoration: underline;
-}
-
-.auth-page>hr {
-    border: .09rem solid #47a45849;
-    width: 80rem;
+    margin-top: -1vmin;
 }

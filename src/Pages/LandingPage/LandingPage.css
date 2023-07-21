@@ -1,8 +1,8 @@
 @font-face {
     font-family: tanMerengue-black;
     src: url(../../fonts/TAN\ -\ MERINGUE.woff);
-  }
-  
+}
+
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -22,14 +22,14 @@
     margin-bottom: 0;
 }
 
-.landing-page > h3 {
+.landing-page>h3 {
     letter-spacing: .35vmin;
     font-size: 4vmin;
     font-weight: lighter;
     margin-top: 0;
 }
 
-.landing-page > p {
+.landing-page>p {
     text-align: left;
     font-size: 2.1vmin;
     margin-top: -2vmin;
@@ -37,7 +37,7 @@
     line-height: 3vmin;
 }
 
-.landing-page > a {
+.landing-page>a {
     background-color: #EDAF90;
     text-decoration: none;
     color: white;

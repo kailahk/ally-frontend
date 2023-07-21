@@ -8,12 +8,13 @@ export default function AuthPage({ setUser, fetchUser }) {
 
     return (
         <div className='auth-page'>
-            <br />
+            <h1>ALLY</h1>
             <div className='auth-page-forms'>
                 {showAuthPage ? <SignUpForm setUser={setUser} fetchUser={fetchUser} /> : <LoginForm fetchUser={fetchUser} />}
-                <button className='login-option-btn' onClick={() => setShowAuthPage(!showAuthPage)}>
+               <p>{showAuthPage ? 'Already have an account?' : 'Don\'t have an account yet?'}</p> 
+                <p className='login-option-btn' onClick={() => setShowAuthPage(!showAuthPage)}>
                     {showAuthPage ? 'Login' : 'Sign Up'}
-                </button>
+                </p>
             </div>
         </div>
     );
