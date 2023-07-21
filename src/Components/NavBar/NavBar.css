@@ -1,31 +1,40 @@
+@font-face {
+    font-family: glacialIndifference-black;
+    src: url(../../fonts/GlacialIndifference-Regular.otf);
+}
+
 nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
     font-weight: 700;
+    padding: 0 10vmin;
+    margin-bottom: 3vmin;
 }
 
 .nav-logo {
-    color: #4A66FA;
-    font-size: 2rem;
-    margin-top: 2.5rem;
+    font-family: tanMerengue-black;
+    color: #e25b51;
+    font-size: 6vmin;
+    margin-bottom: -.5vmin;
 }
 
 .dash-link {
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin-left: 6vmin;
+    font-size: 2.25vmin;
+    font-weight: lighter;
+    padding: .5vmin 1vmin;
+    text-decoration: none;
+    color: #e25b51;
 }
 
-.logout-btn {
-    border-radius: 3rem;
-    background-color: black;
+.active-nav {
+    border: .2vmin solid #e25b51;
+    border-radius: 4vmin;
+}
+
+.logout-btn:hover {
+    background-color: #EDAF90;
     color: white;
-    padding: .5rem;
-    margin-top: 2rem;
-    font-weight: 400;
-    font-size: .8rem;
-}
-
-.welcome-user {
-    margin-top: 3rem;
+    border-radius: 4vmin;
 }
