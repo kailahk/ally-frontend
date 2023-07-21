@@ -47,3 +47,10 @@
     margin-left: 58vmin;
     font-size: 2.5vmin;
 }
+
+.landing-page>a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: .2vmin solid #e25b51;
+    color: #e25b51;
+}
