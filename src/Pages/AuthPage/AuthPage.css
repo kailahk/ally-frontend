@@ -3,33 +3,6 @@
     flex-direction: column;
 }
 
-.landing-page-message {
-    display: flex;
-    flex-direction: column;
-}
-
-.landing-page-message>* {
-    text-align: left;
-    margin-left: 4rem;
-    width: 47rem;
-}
-
-.landing-page-message>h3 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    margin-top: 5rem;
-}
-
-.landing-page-message>p {
-    text-align: left;
-    font-size: 1rem;
-}
-
-.auth-page-title {
-    color: #4A66FA;
-    font-size: 2rem;
-}
-
 .auth-page-forms {
     margin: 0 6rem;
     margin-top: 5rem;

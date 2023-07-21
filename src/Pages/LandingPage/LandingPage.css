@@ -1,0 +1,49 @@
+@font-face {
+    font-family: tanMerengue-black;
+    src: url(../../fonts/TAN\ -\ MERINGUE.woff);
+  }
+  
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://i.imgur.com/HDO6f2q.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    align-items: flex-start;
+    padding-left: 10vmin;
+}
+
+.landing-page>.title {
+    font-family: tanMerengue-black;
+    color: #e25b51;
+    font-size: 14vmin;
+    margin-top: 5vmin;
+    margin-bottom: 0;
+}
+
+.landing-page > h3 {
+    letter-spacing: .35vmin;
+    font-size: 4vmin;
+    font-weight: lighter;
+    margin-top: 0;
+}
+
+.landing-page > p {
+    text-align: left;
+    font-size: 2.1vmin;
+    margin-top: -2vmin;
+    width: 100vmin;
+    line-height: 3vmin;
+}
+
+.landing-page > a {
+    background-color: #EDAF90;
+    text-decoration: none;
+    color: white;
+    border-radius: 4vmin;
+    padding: 1.8vmin;
+    margin-top: 2vmin;
+    margin-left: 58vmin;
+    font-size: 2.5vmin;
+}
