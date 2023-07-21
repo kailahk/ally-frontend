@@ -1,8 +1,15 @@
+@font-face {
+  font-family: tanMerengue-black;
+  src: url(./fonts/TAN\ -\ MERINGUE.woff);
+}
+@font-face {
+  font-family: glacialIndifference-black;
+  src: url(./fonts/GlacialIndifference-Regular.otf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: glacialIndifference-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
