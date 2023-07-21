@@ -37,12 +37,6 @@
   }
 }
 
-a {
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .error-message {
   color: red;
 }

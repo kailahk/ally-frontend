@@ -1,12 +1,13 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
-import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../Components/NavBar/NavBar';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import FileDetailsPage from '../FileDetailsPage/FileDetailsPage';
 import NewFilePage from '../NewFilePage/NewFilePage';
 import EditFilePage from '../EditFilePage/EditFilePage';
+import LandingPage from '../LandingPage/LandingPage';
+import AuthPage from '../AuthPage/AuthPage';
 
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
@@ -65,7 +66,10 @@ export default function App() {
 					</Routes>
 				</div>
 			) : (
-				<AuthPage setUser={setUser} fetchUser={fetchUser} handleLogout={handleLogout} />
+				<Routes>
+					<Route exact path='/' element={<LandingPage />}></Route>
+					<Route exact path='/authpage' element={<AuthPage />}></Route>
+				</Routes>
 			)}
 		</main>
 	);
