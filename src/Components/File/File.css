@@ -1,45 +1,56 @@
-.title {
+.auth-title {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    align-items: flex-end;
-    margin-left: 8%;
+    align-items: center;
 }
 
 .file {
-    margin-top: 2vmin;
-    overflow-y: scroll;
+    margin: 3vmin 2vmin 0 2vmin;
+    overflow-x: scroll;
 }
 
-.title > * {
+.file-summary {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.auth-title > * {
     justify-self: start;
 }
 
 .updated-at {
     margin-left: 8%;
     font-size: 2vmin;
+    padding-left: 3vmin;
 }
 
-.title>p>span {
-    font-size: 5vmin;
+.auth-title>p>span {
+    font-size: 3vmin;
     text-transform: uppercase;
     letter-spacing: .1vmin;
 }
 
-.title > p {
-    font-size: 2vmin;
-}
-
 .file-summary > hr {
     border: .05vmin solid #e25b51;
-    width: 88%
 }
+
 
 .file-summary > a {
     text-decoration: none;
     color: black;
 }
 
-.relationship-summary {
-    width: 12vw;
+.auth-title-name {
+    width: 80%;
     overflow-x: scroll;
+    text-align: left;
+    margin-left: 3vmin;
+}
+
+.relationship-summary {
+    width: 80%;
+    text-align: left;
+    margin-left: 4vmin;
+    overflow-x: scroll;
+    font-size: 2vmin;
 }

@@ -39,8 +39,8 @@ export default function FileList({ user }) {
                 Files.map((file) => (
                     <div className="file-summary" key={file._id}>
                         <Link to={`/filedetails/${file._id}`}>
-                            <div className="title">
-                                <p><span>{file.title}</span></p>
+                            <div className="auth-title">
+                                <p className='auth-title-name'><span>{file.title}</span></p>
                                 <p className='relationship-summary'>{file.relationship}</p>
                                 <p className='updated-at'>{new Date(file.updatedAt).toLocaleDateString('en-us', {
                                     weekday: 'short',
