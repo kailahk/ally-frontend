@@ -20,12 +20,13 @@ nav {
 }
 
 .dash-link {
-    margin-left: 6vmin;
+    margin-left: 4vmin;
     font-size: 2.25vmin;
     font-weight: lighter;
     padding: .5vmin 1vmin;
     text-decoration: none;
     color: #e25b51;
+    border: .2vmin solid transparent;
 }
 
 .active-nav {
