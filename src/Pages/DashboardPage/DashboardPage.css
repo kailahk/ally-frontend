@@ -11,7 +11,7 @@
 }
 
 .dashboard-page > * {
-    grid-row: 2;
+    grid-row: 2 / 4;
     grid-column: 2;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .dashboard-page > a {
-    grid-row: 3 !important;
+    grid-row: 4 !important;
     grid-column: 2;
 }
 

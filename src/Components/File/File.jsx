@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom';
 // }
 
 const SERVER_URL =
-	process.env.NODE_ENV === 'development'
-		? 'http://localhost:8000'
-		: 'https://web-production-caf1c.up.railway.app';
+    process.env.NODE_ENV === 'development'
+        ? 'http://localhost:8000'
+        : 'https://web-production-caf1c.up.railway.app';
 
 export default function FileList({ user }) {
     const [Files, setFiles] = useState([]);
@@ -33,23 +33,27 @@ export default function FileList({ user }) {
     useEffect(() => {
         getFiles();
     }, []);
-
     return (
-        <ul className='file'>
+        <div className='file'>
             {Files &&
                 Files.map((file) => (
                     <div className="file-summary" key={file._id}>
                         <Link to={`/filedetails/${file._id}`}>
                             <div className="title">
-                                <div className='icon-summary'></div>
-                                <p><span>{file.title}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                                <p><span>{file.title}</span></p>
                                 <p className='relationship-summary'>{file.relationship}</p>
+                                <p className='updated-at'>{new Date(file.updatedAt).toLocaleDateString('en-us', {
+                                    weekday: 'short',
+                                    year: 'numeric',
+                                    month: 'short',
+                                    day: 'numeric',
+                                })}</p>
                             </div>
                         </Link>
                         <hr />
                     </div>
                 ))}
-        </ul>
+        </div>
     );
 };
 
