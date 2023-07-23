@@ -11,56 +11,58 @@ export default function InputForm({
 	handleChange,
 	dateValue,
 	setDateValue,
-    birthday,
-    setBirthday
+	birthday,
+	setBirthday
 }) {
 	return (
 		<div className='post-wrapper input-form'>
 			<form onSubmit={handleSubmit} className='new-file-form'>
-				<label>
-					<h4>Name or Description</h4>
-					<textarea name='title' value={fileData.title} type='text' onChange={handleChange} />
-				</label>
-				<label>
-					<h4>Relationship to You</h4>
-					<textarea
-						name='relationship'
-						value={fileData.relationship}
-						type='text'
-						onChange={handleChange}
-					/>
-				</label>
-				<label>
-					<h4>Circumstances and Life Events</h4>
-					<textarea
-						name='circumstances'
-						value={fileData.circumstances}
-						type='text'
-						onChange={handleChange}
-					/>
-				</label>
-                <div className="calendar-container">
-                    <label>
-                        <h4>Birthday</h4>
-                    </label>
-                    <DatePicker onChange={(birthday) => setBirthday(birthday)} selected={birthday} className="date-picker" />
-                </div>
-				<div className='calendar-container'>
+				<div className="form-fields">
 					<label>
-						<h4>Last Interaction</h4>
+						<h4>Name:</h4>
+						<textarea name='title' value={fileData.title} type='text' onChange={handleChange} />
 					</label>
-					<DatePicker
-						onChange={(date) => setDateValue(date)}
-						selected={dateValue}
-						className='date-picker'
-					/>
+					<label>
+						<h4>Relationship:</h4>
+						<textarea
+							name='relationship'
+							value={fileData.relationship}
+							type='text'
+							onChange={handleChange}
+						/>
+					</label>
+					<label>
+						<h4>Key Circumstances / Life Events:</h4>
+						<textarea
+							name='circumstances'
+							value={fileData.circumstances}
+							type='text'
+							onChange={handleChange}
+						/>
+					</label>
+					<div className="calendar-container">
+						<label>
+							<h4>Birthday:</h4>
+						</label>
+						<DatePicker onChange={(birthday) => setBirthday(birthday)} selected={birthday} className="date-picker" />
+					</div>
+					<div className='calendar-container'>
+						<label>
+							<h4>Last Interaction:</h4>
+						</label>
+						<DatePicker
+							onChange={(date) => setDateValue(date)}
+							selected={dateValue}
+							className='date-picker'
+						/>
+					</div>
+					<label>
+						<h4>Notes:</h4>
+						<textarea name='notes' value={fileData.notes} type='text' onChange={handleChange} />
+					</label>
 				</div>
-				<label>
-					<h4>Notes</h4>
-					<textarea name='notes' value={fileData.notes} type='text' onChange={handleChange} />
-				</label>
 				<div className='btn postbtn1'>
-					<input className='postBtn' type='submit' value='Save' />
+					<input className='post-btn' type='submit' value='Save' />
 				</div>
 			</form>
 		</div>

@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 
-.signup-form > form > .form-fields > input, .form-fields > label {
+.signup-form > form > .form-fields > input,.signup-form > form > .form-fields > label {
     margin-top: 3vmin;
     padding: .75vmin;
 }

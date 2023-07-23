@@ -58,9 +58,6 @@ export default function NewFilePage({ user }) {
 	};
 	return (
 		<div className='new-file-page'>
-            <h1>Add Person</h1>
-            <hr />
-            <br />
 			<InputForm
 				user={user}
 				fileData={postForm}

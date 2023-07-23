@@ -1,24 +1,48 @@
-.new-file-form>* {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 26rem;
-    margin: 1rem auto;
-    text-align: left;
+.input-form > form > .form-fields {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    width: 43vmin;
+    margin: 0 auto;
 }
 
-.postBtn {
-    border-radius: 3rem;
-    background-color: black;
-    color: white;
-    width: 4.5rem;
-    height: 2.5rem;
+.input-form > form > .form-fields > label > textarea {
+    background-color: #BCCADB;
     border-style: none;
-    margin-left: 10rem;
-    margin-top: 3rem;
+    font-size: 1.5vmin;
+    padding: .75vmin;
+    height: 2vmin;
+    align-self: center;
+    border-radius: 2vmin;
+
+}
+.input-form > form > .form-fields > label, div.calendar-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .75vmin;
+    padding-right: 2vmin;
 }
 
-.new-file-form>label>textArea {
-    padding: .25rem;
-    margin-left: 1rem;
+.input-form > form > .form-fields > label > h4, div.calendar-container > label > h4 {
+    text-align: right;
+    margin-right: 3vmin;
+    font-size: 2vmin;
+    font-weight: 400;
+}
+
+.post-btn {
+    background-color: #EDAF90;
+    border: .2vmin solid transparent;
+    color: white;
+    border-radius: 4vmin;
+    padding: 1vmin;
+    margin: 4vmin 0 2vmin 0;
+    font-size: 1.8vmin;
+}
+
+.post-btn:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: .2vmin solid #e25b51;
+    color: #e25b51;
 }
