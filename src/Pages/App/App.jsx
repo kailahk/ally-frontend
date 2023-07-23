@@ -63,12 +63,14 @@ export default function App() {
 						<Route exact path='/newfile' element={<NewFilePage user={user} />} />
 						<Route exact path='/editfile/:id' element={<EditFilePage user={user} />} />
 						<Route exact path='/filedetails/:id' element={<FileDetailsPage user={user} />} />
+						<Route path='*' element={<DashboardPage user={user} files={files} />} />
 					</Routes>
 				</div>
 			) : (
 				<Routes>
 					<Route exact path='/' element={<LandingPage />}></Route>
 					<Route exact path='/authpage' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
+					<Route exact path='/*' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
 				</Routes>
 			)}
 		</main>
