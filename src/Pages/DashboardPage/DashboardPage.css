@@ -1,21 +1,67 @@
-.new-file-btn {
-    border-radius: 3rem;
-    background-color: black;
-    color: white;
-    width: 6rem;
-    height: 2.5rem;
-    border-style: none;
-    margin-top: 2rem;
+@font-face {
+    font-family: tanMerengue-black;
+    src: url(../../fonts/TAN\ -\ MERINGUE.woff);
+}
+  
+.dashboard-page {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 8vh 60vh 5vh 5vh;
+    height: 90vh;
 }
 
-.dashboard-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.dashboard-page > * {
+    grid-row: 2;
+    grid-column: 2;
 }
 
 .dashboard-page > h2 {
-    font-size: 2.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    grid-row: 1;
+    grid-column: 2;
+    font-family:  tanMerengue-black;
+    font-weight: lighter;
+    letter-spacing: .2vmin;
+    font-size: 3vmin;
+    background-color: #BCCADB;
+    height: 6vh;
+    width: 90%;
+    padding-top: 2vh;
+    align-self: center;
+    margin: 0 2vmin;
+    justify-self: center;
+}
+
+.dashboard-page > .img-right {
+    grid-row: 1 !important;
+    grid-column: 3;
+    height: 82vh;
+    justify-self: end;
+}
+
+.dashboard-page > .img-left {
+    grid-row: 1 !important;
+    grid-column: 1;
+    height: 82vh;
+}
+
+.dashboard-page > a {
+    grid-row: 3 !important;
+    grid-column: 2;
+}
+
+.new-file-btn {
+    background-color: #EDAF90;
+    border: .2vmin solid transparent;
+    color: white;
+    border-radius: 4vmin;
+    padding: 1vmin;
+    margin: 4vmin 0 2vmin 0;
+    font-size: 1.8vmin;
+}
+
+.new-file-btn:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: .2vmin solid #e25b51;
+    color: #e25b51;
 }

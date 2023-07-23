@@ -6,7 +6,6 @@
 .auth-page {
     display: flex;
     flex-direction: column;
-    background-color: #FAF3E7;
     height: 100vh;
 }
 
