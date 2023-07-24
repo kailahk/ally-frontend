@@ -4,10 +4,10 @@
 
 .new-file-page > * {
     background-color: white;
-    width: 40vw;
+    width: 45vmin;
     margin: 0 auto;
     margin-top: 5vmin;
-    padding: 3vmin 0 2vmin 0;
+    padding: 3vmin 2vmin 2vmin 3vmin;
     border-radius: 2vmin;
     box-shadow: 1.5vmin 1.5vmin 0 #BCCADB;
 }

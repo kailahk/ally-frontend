@@ -1,8 +1,7 @@
 .input-form > form > .form-fields {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
-    width: 43vmin;
+    width: 47vmin;
     margin: 0 auto;
 }
 
@@ -19,8 +18,8 @@
 .input-form > form > .form-fields > label, div.calendar-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: .75vmin;
-    padding-right: 2vmin;
+    padding: .5vmin;
+    padding-right: 5vmin;
 }
 
 .input-form > form > .form-fields > label > h4, div.calendar-container > label > h4 {
@@ -45,4 +44,9 @@
     text-decoration: none;
     border: .2vmin solid #e25b51;
     color: #e25b51;
+}
+
+.react-datepicker-wrapper {
+    display: flex !important;
+    align-items: center;
 }

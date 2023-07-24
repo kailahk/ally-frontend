@@ -1,4 +1,13 @@
-.edit-file-page > hr {
-    border: .09rem solid #47a45849;
-    width: 30rem;
+.edit-file-page {
+    height: 92vh;
+}
+
+.edit-file-page>* {
+    background-color: white;
+    width: 45vmin;
+    margin: 0 auto;
+    margin-top: 5vmin;
+    padding: 3vmin 2vmin 2vmin 3vmin;
+    border-radius: 2vmin;
+    box-shadow: 1.5vmin 1.5vmin 0 #BCCADB;
 }

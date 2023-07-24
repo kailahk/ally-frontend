@@ -90,9 +90,6 @@ export default function EditFilePage({ user }) {
 
 	return (
 		<div className='edit-file-page'>
-			<h1>Edit Person</h1>
-			<hr />
-			<br />
 			<InputForm
 				user={user}
 				fileData={putForm}
