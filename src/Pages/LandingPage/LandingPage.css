@@ -64,3 +64,10 @@
     justify-content: center;
     width: 150vmin;
 }
+
+@media (max-width: 800px) {
+    .landing-page {
+        background-position:center;
+        width:fit-content;
+    }
+}

@@ -46,7 +46,6 @@
     text-align: left;
     margin-left: 3vmin;
     overflow-y: scroll;
-    height: 3vmin;
 }
 
 .relationship-summary {
@@ -58,4 +57,17 @@
     height: 2vmin;
     font-size: 2vmin;
     margin-top: 3vmin;
+}
+
+@media (max-width: 800px) {
+    .relationship-summary {
+        display: none
+    }
+    .updated-at {
+        display: none;
+    }
+
+    .auth-title-name {
+        width: 200%;
+    }
 }

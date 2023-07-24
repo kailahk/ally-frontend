@@ -60,3 +60,12 @@
     border: .2vmin solid #e25b51;
     color: #e25b51;
 }
+
+@media (max-width: 800px) {
+    .img-left {
+        display: none;
+    }
+    .img-right {
+        display: none;
+    }
+}

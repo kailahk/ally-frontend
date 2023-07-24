@@ -50,3 +50,9 @@
     display: flex !important;
     align-items: center;
 }
+
+@media (max-width: 800px) {
+    .input-form {
+        width: 60vmin !important;
+    }
+}

@@ -21,3 +21,15 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (max-width: 800px) {
+    .about-page {
+        grid-template-columns: 1fr;
+    }
+    .about-info > p {
+        font-size: 4vmin;
+    }
+    .rock-img {
+        display: none;
+    }
+}

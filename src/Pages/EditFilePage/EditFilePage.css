@@ -11,3 +11,9 @@
     border-radius: 2vmin;
     box-shadow: 1.5vmin 1.5vmin 0 #BCCADB;
 }
+
+@media (max-width: 800px) {
+    .edit-file-page > *{
+        width: 60vmin !important;
+    }
+}
