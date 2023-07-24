@@ -113,6 +113,11 @@
     align-items: center;
 }
 
+.ai-integration > .ai-btns {
+    display: flex;
+    align-items: center;
+}
+
 .ai-btn {
     background-image: linear-gradient(to right, #E1776F,#E683DF, #647CF8);
     border-style: none;
@@ -125,8 +130,29 @@
     font-size: 2vmin;
 }
 
+.ai-btn:hover {
+    transform: scale(.95);
+}
+
+.ai-question {
+    background-color: #EDAF90;
+    border: .2vmin solid #EDAF90;
+    height: 3vmin;
+    width: 3vmin;
+    color: white;
+    font-weight: bolder;
+    font-size: 2.5vmin;
+    border-radius: 50%;
+    padding: .5vmin;
+    margin: 2vmin -2vmin 0 1vmin;
+    text-decoration: none;
+}
+
 .gathering-resources {
-    color: rgba(128, 128, 128, 0.857)
+    color: rgba(128, 128, 128, 0.857);
+    position: absolute;
+    margin-top: 9vmin;
+    font-size: 1.5vmin;
 }
 
 .edit-and-delete-btns {
@@ -147,7 +173,7 @@
     font-size: 1.8vmin;
 }
 
-.delete-btn:hover, .edit-btn:hover {
+.delete-btn:hover, .edit-btn:hover, .ai-question:hover {
     background-color: transparent;
     text-decoration: none;
     border: .2vmin solid #e25b51;
@@ -160,5 +186,5 @@
     overflow-x: scroll;
     overflow-y: scroll;
     font-size: 2vmin;
-    margin-top: -2vmin;
+    margin-top: 2vmin;
 }

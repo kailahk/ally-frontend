@@ -131,7 +131,6 @@ export default function FileDetailsPage({ user }) {
             console.error(err);
         }
     };
-    console.log(chatResponses)
     return (
         <div className='file-details-page'>
             <div className='name-and-relationship'>
@@ -155,8 +154,11 @@ export default function FileDetailsPage({ user }) {
                 <p><span>birthday is </span>{birthday}</p>
             </div>
             <div className="ai-integration">
-                <button className='ai-btn' onClick={handleClick}>Get Resources</button>
-                <p style={{display: error === '' ? 'none' : ''}}>{error}</p>
+                <div className='ai-btns'>
+                    <button className='ai-btn' onClick={handleClick}>Get Resources</button>
+                    <Link to="/about" className='ai-question'>?</Link>
+                </div>
+                <p style={{ display: error === '' ? 'none' : '' }}>{error}</p>
                 <p className='gathering-resources'>{loading ? 'Gathering Resources' : ''}</p>
                 <div className='chat-response'>{chatResponses}</div>
             </div>
