@@ -21,3 +21,7 @@ textarea, input {
   font-size: 2vmin;
   color: black
 }
+
+h1 {
+  letter-spacing: .5vmin;
+}

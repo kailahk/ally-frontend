@@ -1,104 +1,164 @@
-.icon-details {
-    background-color: #efa73442;
-    border-radius: 50%;
-    height: 7rem;
-    width: 7rem;
-    margin: 2rem 2rem 0 0
+@font-face {
+    font-family: tanMerengue-black;
+    src: url(../../fonts/TAN\ -\ MERINGUE.woff);
+}
+  
+.file-details-page {
+    height: 92vh;
+    display: grid;
+    grid-template-columns: 15% 3fr 2% 2fr 15%;
+    grid-template-rows: 1fr 2% 2fr 2% 4fr 12%;
 }
 
-.details-header {
+.name-and-relationship {
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
-    width: 40rem;
-    justify-content: flex-start;
-    margin: 1rem auto 2rem auto;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #BCCADB;
 }
 
-.header-title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.header-title > p {
-    width: 15rem;
-    text-align: left;
+.name-and-relationship > h1 {
+    font-family: tanMerengue-black;
+    text-transform: uppercase;
+    font-size: 6vmin;
+    padding-top: 1.5vmin;
+    margin-left: 4vmin;
+    width: 30vmin;
+    height: 8vmin;
+    overflow-y: scroll;
     overflow-x: scroll;
 }
 
-.header-title>h1 {
-    font-size: 3rem;
+.name-and-relationship > p {
+    font-size: 2vmin;
+    margin: 0 auto;
+    margin-top: 4vmin;
+    margin-left: 2vmin;
+    overflow-x: scroll;
+    text-align: center;
+    width: 20vmin;
+    height: 2vmin;
+    overflow-y: scroll;
+}
+
+.circumstances {
+    grid-column: 2;
+    grid-row: 3 / 4;
+    background-color: #BCCADB;
+    text-align: left;
+    padding: 0 2vmin;
+    line-height: 2.2vmin;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.circumstances > p {
+    font-size: 2vmin;
+}
+
+.notes {
+    grid-column: 2;
+    grid-row: 5;
+    background-color: #BCCADB;
+    text-align: left;
+    padding: 0 2vmin;
+    line-height: 2.2vmin;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.notes > p {
+    font-size: 2vmin;
+}
+
+.reminders {
+    grid-column: 4;
+    grid-row: 1 / 4;
+    background-color: #BCCADB;
+    padding: 0 1vmin;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.reminders > p {
+    font-size: 1.5vmin;
+}
+
+.reminder-title {
+    font-family: tanMerengue-black;
+    font-size: 3vmin;
+    margin-top: 3vmin;
     margin-bottom: 0;
 }
 
-.details-and-reminders {
-    display: flex;
-    justify-content: center;
-    width: 45rem;
-    margin: 0 auto;
+.reminder-functionality > hr {
+    border: .1vmin solid black;
+    width: 18vmin;
+    margin-bottom: 2vmin;
 }
 
-.file-details {
+.reminder-functionality > p {
+    font-size: 2.5vmin;
+}
+
+.ai-integration {
+    grid-column: 4;
+    grid-row: 5 / 6;
+    background-color: #BCCADB;
+    padding: 0 2vmin;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 28rem;
+    align-items: center;
+}
+
+.ai-btn {
+    background-image: linear-gradient(to right, #E1776F,#E683DF, #647CF8);
+    border-style: none;
+    border-radius: 2vmin;
+    padding: 2vmin;
+    color: white;
+    font-weight: bold;
     margin: 0 auto;
-}
-
-.file-details-page>hr {
-    border: .09rem solid #efa73442;
-    width: 45rem;
-}
-
-.file-details>p {
-    padding: .65rem 0;
-    text-align: left;
-    width: 25rem;
-    overflow-x: scroll;
-}
-
-.file-details>p>span,
-.reminders, .resources {
-    font-weight: 700
+    margin-top: 2vmin;
+    font-size: 2vmin;
 }
 
 .gathering-resources {
     color: rgba(128, 128, 128, 0.857)
 }
 
+.edit-and-delete-btns {
+    grid-column: 5;
+    grid-row: 5;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: -2vmin;
+}
+
 .delete-btn, .edit-btn {
-    border-radius: 3rem;
-    background-color: black;
+    background-color: #EDAF90;
+    border: .2vmin solid transparent;
     color: white;
-    width: 3.5rem;
-    height: 2rem;
-    margin: 1rem .5rem;
-    border-style: none;
+    border-radius: 4vmin;
+    padding: 1vmin;
+    margin: 4vmin 0 2vmin 1vmin;
+    font-size: 1.8vmin;
 }
 
-.ai-btn, .reminder-btn {
-    border-radius: .5rem;
-    background-color: #47a45832;
-    border: .09rem solid #47A458;
-    color: black;
-    width: 10rem;
-    height: 3rem;
-    margin: 2rem 2.5rem 0 2.5rem;
-    font-weight: 700;
-}
-
-.reminder-btn {
-    background-color: #4a67fa35;
-    border: .09rem solid #4A66FA;
+.delete-btn:hover, .edit-btn:hover {
+    background-color: transparent;
+    text-decoration: none;
+    border: .2vmin solid #e25b51;
+    color: #e25b51;
 }
 
 .chat-response {
-    width: 40rem;
-    margin: 0 auto;
-    text-align: left;
-    margin-top: -2rem;
-}
-
-.reminder-functionality {
-    margin-top: 2rem;
+    width: 33vmin;
+    height: 30vmin;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    font-size: 2vmin;
+    margin-top: -2vmin;
 }

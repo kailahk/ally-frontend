@@ -45,6 +45,8 @@
     overflow-x: scroll;
     text-align: left;
     margin-left: 3vmin;
+    overflow-y: scroll;
+    height: 3vmin;
 }
 
 .relationship-summary {
@@ -52,5 +54,7 @@
     text-align: left;
     margin-left: 4vmin;
     overflow-x: scroll;
+    overflow-y: scroll;
+    height: 2vmin;
     font-size: 2vmin;
 }
