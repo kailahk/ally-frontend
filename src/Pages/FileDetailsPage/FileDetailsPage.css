@@ -7,7 +7,7 @@
     height: 92vh;
     display: grid;
     grid-template-columns: 15% 3fr 2% 2fr 15%;
-    grid-template-rows: 1fr 2% 2fr 2% 4fr 12%;
+    grid-template-rows: 1.5fr 2% 2fr 2% 4fr 12%;
 }
 
 .name-and-relationship {
@@ -17,18 +17,21 @@
     align-items: center;
     justify-content: space-around;
     background-color: #BCCADB;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+.name-and-relationship>* {
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 .name-and-relationship > h1 {
     font-family: tanMerengue-black;
     text-transform: uppercase;
     font-size: 6vmin;
-    padding-top: 1.5vmin;
-    margin-left: 4vmin;
-    width: 30vmin;
-    height: 8vmin;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    padding: 1.5vmin 0 0 0;
+    margin: 0 0 0 4vmin;
 }
 
 .name-and-relationship > p {
@@ -36,11 +39,7 @@
     margin: 0 auto;
     margin-top: 4vmin;
     margin-left: 2vmin;
-    overflow-x: scroll;
     text-align: center;
-    width: 20vmin;
-    height: 2vmin;
-    overflow-y: scroll;
 }
 
 .circumstances {

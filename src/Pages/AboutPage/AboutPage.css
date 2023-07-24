@@ -7,6 +7,8 @@
 .about-info {
     padding: 5vmin 10vmin 0 10vmin;
     text-align: left;
+    height: 75vh;
+    overflow-y: scroll;
 }
 .about-info > p {
     font-size: 2vmin;
