@@ -8,6 +8,7 @@ import NewFilePage from '../NewFilePage/NewFilePage';
 import EditFilePage from '../EditFilePage/EditFilePage';
 import LandingPage from '../LandingPage/LandingPage';
 import AuthPage from '../AuthPage/AuthPage';
+import AboutPage from '../AboutPage/AboutPage';
 
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
@@ -63,6 +64,7 @@ export default function App() {
 						<Route exact path='/newfile' element={<NewFilePage user={user} />} />
 						<Route exact path='/editfile/:id' element={<EditFilePage user={user} />} />
 						<Route exact path='/filedetails/:id' element={<FileDetailsPage user={user} />} />
+						<Route exact path='/about' element={<AboutPage />} />
 						<Route path='*' element={<DashboardPage user={user} files={files} />} />
 					</Routes>
 				</div>

@@ -1,0 +1,12 @@
+.about-page {
+    height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.rock-img {
+    margin-top: -16vh;
+    background-image: url('https://i.imgur.com/Sl2hvA5.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

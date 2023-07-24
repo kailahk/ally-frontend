@@ -10,6 +10,8 @@ nav {
     font-weight: 700;
     padding: 0 10vmin;
     margin-bottom: 3vmin;
+    position:sticky;
+    z-index: 1;
 }
 
 .nav-logo {
