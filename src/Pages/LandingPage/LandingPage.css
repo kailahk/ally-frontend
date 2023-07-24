@@ -12,6 +12,7 @@
     height: 100vh;
     align-items: flex-start;
     padding-left: 10vmin;
+    margin-bottom: 7vmin;
 }
 
 .landing-page>.title {

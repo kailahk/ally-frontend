@@ -9,6 +9,7 @@ import EditFilePage from '../EditFilePage/EditFilePage';
 import LandingPage from '../LandingPage/LandingPage';
 import AuthPage from '../AuthPage/AuthPage';
 import AboutPage from '../AboutPage/AboutPage';
+import Footer from '../../Components/Footer/Footer';
 
 const SERVER_URL =
 	process.env.NODE_ENV === 'development'
@@ -75,6 +76,7 @@ export default function App() {
 					<Route exact path='/*' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
 				</Routes>
 			)}
+			<Footer/>
 		</main>
 	);
 };
