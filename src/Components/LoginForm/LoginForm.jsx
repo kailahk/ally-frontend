@@ -20,6 +20,7 @@ export default function LoginForm({ fetchUser }) {
 
     async function handleSubmit(evt) {
         evt.preventDefault();
+        console.log(credentials);
         try {
             const res = await fetch(SERVER_URL + '/users/login', {
                 method: 'POST',

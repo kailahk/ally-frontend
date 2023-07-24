@@ -1,8 +1,3 @@
-@font-face {
-    font-family: tanMerengue-black;
-    src: url(../../fonts/TAN\ -\ MERINGUE.woff);
-}
-
 .landing-page {
     display: flex;
     flex-direction: column;
@@ -12,7 +7,6 @@
     height: 100vh;
     align-items: flex-start;
     padding-left: 10vmin;
-    margin-bottom: 7vmin;
 }
 
 .landing-page>.title {
@@ -38,20 +32,35 @@
     line-height: 3vmin;
 }
 
-.landing-page>a {
+.landing-page>.landing-btns>a, .landing-page>.landing-btns>button:hover {
     background-color: #EDAF90;
+    border: .2vmin solid #EDAF90;
     text-decoration: none;
     color: white;
     border-radius: 4vmin;
     padding: 1.8vmin;
     margin-top: 2vmin;
-    margin-left: 58vmin;
     font-size: 2.5vmin;
 }
 
-.landing-page>a:hover {
+.landing-page>.landing-btns>a:hover, .landing-page>.landing-btns>button {
     background-color: transparent;
     text-decoration: none;
     border: .2vmin solid #e25b51;
     color: #e25b51;
+    border-radius: 4vmin;
+    padding: 1.8vmin;
+    margin-top: 2vmin;
+    font-size: 2.5vmin;
+}
+
+.landing-page>.landing-btns>button, .landing-page>.landing-btns>a{
+    margin-left: 2vmin;
+}
+
+.landing-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150vmin;
 }

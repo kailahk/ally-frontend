@@ -7,5 +7,5 @@
 .footer {
     position: absolute;
     width: 100%;
-    margin-top: -10vmin;
+    bottom: 0vmin;
 }

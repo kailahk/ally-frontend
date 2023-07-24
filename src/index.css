@@ -16,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-textarea, input {
+textarea, input, button {
   font-family: glacialIndifference-black;
   font-size: 2vmin;
   color: black

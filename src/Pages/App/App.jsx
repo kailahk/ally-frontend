@@ -25,8 +25,6 @@ export default function App() {
 		setUser(null);
 		setFiles([]);
 		localStorage.removeItem('token');
-
-		alert('You have been logged out!');
 		navigate('/');
 	}
 
@@ -71,7 +69,7 @@ export default function App() {
 				</div>
 			) : (
 				<Routes>
-					<Route exact path='/' element={<LandingPage />}></Route>
+					<Route exact path='/' element={<LandingPage fetchUser={fetchUser}/>}></Route>
 					<Route exact path='/authpage' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
 					<Route exact path='/*' element={<AuthPage setUser={setUser} fetchUser={fetchUser}/>}></Route>
 				</Routes>
